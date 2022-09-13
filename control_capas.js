@@ -11,7 +11,8 @@ bringToFront: true,
 version: '1.1.0',
 maxZoom: 20,
 attribution: "myattribution",
-pane: 'labels'
+pane: 'labels',
+tiled:true
 
 }).addTo(map);
 
