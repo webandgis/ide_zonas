@@ -23,7 +23,7 @@
 map.createPane('labels');
 map.getPane('labels').style.zIndex = 650;
 
-var wms2 = new L.tileLayer.wms("http://172.22.14.91:8080/geoserver/Webmap2/wms", {
+var wmsLayer = new L.tileLayer.wms("http://172.22.14.91:8080/geoserver/Webmap2/wms", {
 layers: 'Webmap2:tramos_canelones',
 format: 'image/png',
 transparent: true,
@@ -34,7 +34,8 @@ maxZoom: 20,
 attribution: "myattribution",
 pane: 'labels'
 
-}).addTo(map);
+});
+wmsLayer.addTo(map);
 
 </script>
 
