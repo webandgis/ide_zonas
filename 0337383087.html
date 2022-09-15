@@ -12,12 +12,31 @@
     <link rel="stylesheet" type="text/css" href="./mapa_control.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="[path to js]/L.Geoserver.js"></script>
     
 
 
 
 <!-- marcadores de servicios -->
-<script src="./layer/geoservicios.geojson"></script>
+<script>
+map.createPane('labels');
+map.getPane('labels').style.zIndex = 650;
+
+var wms2 = new L.tileLayer.wms("http://172.22.14.91:8080/geoserver/Webmap2/wms", {
+layers: 'Webmap2:tramos_canelones',
+format: 'image/png',
+transparent: true,
+zIndex: 1000,
+bringToFront: true,
+version: '1.1.0',
+maxZoom: 20,
+attribution: "myattribution",
+pane: 'labels'
+
+}).addTo(map);
+
+</script>
 
 
 </head>
